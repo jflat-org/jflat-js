@@ -1,0 +1,14 @@
+#!/usr/bin/env coffee
+
+fs = require 'fs'
+{JFlat} = require '../lib/jflat'
+jflat = new JFlat()
+
+json = fs.readFileSync('/dev/stdin').toString()
+
+try
+  node = JSON.parse json
+catch e
+  throw "[json-to-jflat] Failed to parse input JSON.\n#{e.toString()}\n"
+
+process.stdout.write jflat.dump node

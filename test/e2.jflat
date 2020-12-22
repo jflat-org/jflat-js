@@ -1,0 +1,31 @@
+/	[2]
+/0	{}
+/0/name	"update web servers"
+/0/hosts	"webservers"
+/0/remote_user	"root"
+/0/tasks	[2]
+/0/tasks/0	{}
+/0/tasks/0/name	"ensure apache is at the latest version"
+/0/tasks/0/yum	{}
+/0/tasks/0/yum/name	"httpd"
+/0/tasks/0/yum/state	"latest"
+/0/tasks/1	{}
+/0/tasks/1/name	"write the apache config file"
+/0/tasks/1/template	{}
+/0/tasks/1/template/src	"/srv/httpd.j2"
+/0/tasks/1/template/dest	"/etc/httpd.conf"
+/1	{}
+/1/name	"update db servers"
+/1/hosts	"databases"
+/1/remote_user	"root"
+/1/tasks	[2]
+/1/tasks/0	{}
+/1/tasks/0/name	"ensure postgresql is at the latest version"
+/1/tasks/0/yum	{}
+/1/tasks/0/yum/name	"postgresql"
+/1/tasks/0/yum/state	"latest"
+/1/tasks/1	{}
+/1/tasks/1/name	"ensure that postgresql is started"
+/1/tasks/1/service	{}
+/1/tasks/1/service/name	"postgresql"
+/1/tasks/1/service/state	"started"

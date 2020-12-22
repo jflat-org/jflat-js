@@ -1,0 +1,36 @@
+=meta: 0.0.2
+
+name: jflat
+version: 0.0.1
+abstract: jFlat class and CLI tools
+homepage: http://jflat.org
+tag: [data, json, convert]
+license: MIT
+copyright: 2020
+
+author:
+  name: Ingy döt Net
+  email: ingy@ingy.net
+  homepage: http://ingy.net
+  github: ingydotnet
+  twitter: ingydotnet
+  freenode: ingy
+
+devel:
+  git: https://github.com/ingydotnet/jflat-js
+  bug: https://github.com/ingydotnet/jflat-js/issues
+  irc: irc.freenode.net#yaml
+
+=npm:
+  bin:
+    json-to-jflat: ./bin/json-to-jflat
+    yaml-to-jflat: ./bin/yaml-to-jflat
+  engines:
+    node: '>=0.4.0'
+  dependencies:
+    yaml: '>=0.10.0'
+
+  devDependencies:
+    coffeescript: '>=2.5.1'
+  scripts:
+    test: make test
