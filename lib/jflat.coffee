@@ -43,7 +43,7 @@ class JFlat
       path = '' if path == '/'
       last = path.len
       for key, value of node
-        if key.match /^[\-\+\:\.\_0-9a-zA-Z]+$/
+        if key.match /^[a-zA-Z][\-\+\:\.\_0-9a-zA-Z]*$/
           @dumpNode "#{path}/#{key}", value
         else
           @dumpNode "#{path}/#{JSON.stringify key}", value
